@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.todo-box{
+    width:700px;
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.count{
+    color:gray;
+    margin-bottom:20px;
+}
+
+.add-task{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.add-task input{
+    flex:1;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.add-task button{
+    width:60px;
+    border:none;
+    background:#000;
+    color:#fff;
+    font-size:24px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.tabs{
+    margin-bottom:20px;
+}
+
+.tabs button{
+    padding:8px 16px;
+    margin-right:10px;
+    border:none;
+    background:#eee;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.tabs .active{
+    background:#2563eb;
+    color:white;
+}
+
+.task{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.task-text{
+    flex:1;
+}
+
+.task-text p{
+    color:gray;
+    font-size:14px;
+}
+
+.high{
+    color:red;
+    font-weight:bold;
+}
+
+.medium{
+    color:orange;
+    font-weight:bold;
+}
+
+.low{
+    color:green;
+    font-weight:bold;
+}
+
+.task button{
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:18px;
+}

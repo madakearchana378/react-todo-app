@@ -20,66 +20,15 @@ function App() {
 
         <Routes>
 
-          <Route
-            path="/"
-            element={<Login />}
-          />
+          <Route path="/" element={<Login />} />
+          <Route  path="/dashboard" element={ <Layout> <Dashboard /> </Layout> } />
+          <Route path="/alltasks" element={  <Layout>  <AllTasks />  </Layout>  } />
+          <Route path="/completed" element={ <Layout> <Completed /> </Layout> } />
+          <Route path="/pending" element={ <Layout> <Pending /> </Layout> } />
+          <Route path="/deleted" element={ <Layout> <Deleted /> </Layout> } />
+          <Route path="/settings" element={ <Layout> <Settings /> </Layout> } />
 
-          <Route
-            path="/dashboard"
-            element={
-              <Layout>
-                <Dashboard />
-              </Layout>
-            }
-          />
-
-          <Route
-            path="/alltasks"
-            element={
-              <Layout>
-                <AllTasks />
-              </Layout>
-            }
-          />
-
-          <Route
-            path="/completed"
-            element={
-              <Layout>
-                <Completed />
-              </Layout>
-            }
-          />
-
-          <Route
-            path="/pending"
-            element={
-              <Layout>
-                <Pending />
-              </Layout>
-            }
-          />
-
-          <Route
-            path="/deleted"
-            element={
-              <Layout>
-                <Deleted />
-              </Layout>
-            }
-          />
-
-          <Route
-            path="/settings"
-            element={
-              <Layout>
-                <Settings />
-              </Layout>
-            }
-          />
-
-        </Routes>
+       </Routes>
 
       </TodoProvider>
 

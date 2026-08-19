@@ -1,21 +1,17 @@
 import React from "react";
 import { useTodos } from "../context/TodoContext";
 
-function Completed() {
-  const {
-    todos,
-    pendingTodo,
-    deleteTodo
-  } = useTodos();
+function Deleted() {
+  const { todos } = useTodos();
 
-  const completedTodos = todos.filter(function (todo) {
-    return todo.status === "Completed";
+  const deletedTodos = todos.filter(function (todo) {
+    return todo.status === "Deleted";
   });
 
   return (
     <div className="tasks-page">
 
-      <h1>Completed Tasks</h1>
+      <h1>Deleted Tasks</h1>
 
       <table className="todo-table">
 
@@ -28,25 +24,25 @@ function Completed() {
 
         <tbody>
 
-          {completedTodos.length === 0 ? (
+          {deletedTodos.length === 0 ? (
 
             <tr>
-              <td colSpan="4">
-                No Completed Tasks
+              <td colSpan="3">
+                No Deleted Tasks
               </td>
             </tr>
 
           ) : (
 
-            completedTodos.map(function (todo) {
+            deletedTodos.map(function (todo) {
 
               return (
                 <tr key={todo.id}>
 
-                  <td className="completed-task">
+                  <td>
                     {todo.title}
                   </td>
-                 </tr>
+                </tr>
               );
 
             })
@@ -61,7 +57,7 @@ function Completed() {
   );
 }
 
-export default Completed;
+export default Deleted;
 
 
 

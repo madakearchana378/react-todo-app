@@ -1,38 +1,61 @@
 import React, { useState } from "react";
+import { useTodos } from "../context/TodoContext";
 
-function TodoInput({ addTodo }) {
+function TodoInput() {
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
 
-  const [text, setText] = useState("");
+  const { addTodo } = useTodos();
 
-  function handleAdd() {
+  function handleSubmit(e) {
+    e.preventDefault();
 
-    addTodo(text);
+    if (title.trim() === "") {
+      return;
+    }
 
-    setText("");
+    if (date === "") {
+      alert("Please select date");
+      return;
+    }
 
+    addTodo(title, date);
+
+    setTitle("");
+    setDate("");
   }
 
   return (
-
-    <div className="todo-input">
+    <form className="todo-input-form" onSubmit={handleSubmit}>
 
       <input
         type="text"
-        value={text}
-        placeholder="Enter Todo..."
-        onChange={function(e){
-          setText(e.target.value);
+        placeholder="Enter task name..."
+        value={title}
+        onChange={function (e) {
+          setTitle(e.target.value);
         }}
       />
 
-      <button onClick={handleAdd}>
-        Add
+      <input
+        type="date"
+        value={date}
+        onChange={function (e) {
+          setDate(e.target.value);
+        }}
+      />
+
+      <button type="submit">
+        Add Todo
       </button>
 
-    </div>
-
+    </form>
   );
-
 }
 
 export default TodoInput;
+
+
+
+
+
